@@ -1,17 +1,13 @@
+/* eslint-disable no-undef */
 'use strict';
-
-$('.thumbnail').on('click', e => {
-  console.log(e.target);
-});
 
 function handleClick() {
   $('.thumbnail').click(function(event) {
-    var selectedImg = $(event.currentTarget).find('img').attr('src');
-    $('.hero img').attr('src', selectedImg);
+    let selectedImg = $(this).find('img').attr('src');
+    let selectedAlt = $(this).find('img').attr('alt');
+    $('.hero img').attr('src', selectedImg).attr('alt', selectedAlt);
   });
 }
 
-$(function() {
-  handleClick();
-});
+$(handleClick);
 
